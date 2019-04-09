@@ -10,6 +10,7 @@ import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BetaprogramsComponent } from './pages/betaprograms/betaprograms.component';
+import { TitlebarComponent } from './widgets/titlebar/titlebar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BetaprogramsComponent } from './pages/betaprograms/betaprograms.compone
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    BetaprogramsComponent
+    BetaprogramsComponent,
+    TitlebarComponent
   ],
   imports: [
     BrowserModule,

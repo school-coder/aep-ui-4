@@ -1,5 +1,21 @@
-<p>
-  hackathon works!
-</p>
+<section>
 
+  <div class="container-fluid" id="id-hackathon-list-container">
+    <div class="row" *ngFor="let hackathon of hackathons" >
+      <div class="col-md-1">
+        <img [src]="hackathon.banner" alt="hack png" width="64px" height="64px">
+      </div>
+      <div class="col-md-1 mg-tp-20">
+        <a href="#">{{ hackathon.name }}</a>
+      </div>
+      <div class="col-md-6">
+        {{ hackathon.description }}
+      </div>
+      <div class="col-md-3"></div>
+      <div class="col-md-1 mg-tp-20">
+        <a href="#">Register</a>
+      </div>
+    </div>
+  </div>
+</section>
 
