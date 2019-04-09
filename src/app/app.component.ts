@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
-  title = 'aepui4';
+
+export class AppComponent implements OnInit {
+  test: string;
+
+  ngOnInit(): void {
+    this.test = 'Test Angular';
+  }
 }
