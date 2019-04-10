@@ -1,23 +1,26 @@
 <section>
   <div class="row container-fluid" id="create-basic-info-wrapper">
-    <form class="col-lg-6">
-      <div class="form-group">
-        <label for="id-hk-banner">Banner</label>
-        <input type="url" name="banner" [(ngModel)]="hackathon.banner" class="form-control" id="id-hk-banner" aria-describedby="hackathon_banner" >
+    <form  [formGroup]="hackathonForm" class="col-lg-6">
+      <div formGroupName="basicInfo">
+        <div class="form-group">
+          <label for="id-hk-banner">Banner</label>
+          <input type="url" name="banner" formControlName="banner" class="form-control" id="id-hk-banner" aria-describedby="hackathon_banner" >
+        </div>
+        <div class="form-group">
+          <label for="id-hk-name">Name</label>
+          <input type="text" formControlName="name" name="name" class="form-control" id="id-hk-name" aria-describedby="hackathon_name" >
+        </div>
+        <div class="form-group">
+          <label for="id-hk-summary">Summary</label>
+          <input type="text" formControlName="summary" name="summary" class="form-control" id="id-hk-summary" aria-describedby="hackathon_summary" >
+        </div>
+        <div class="form-group">
+          <label for="id-hk-description">Description</label>
+          <textarea name="description" formControlName="description" id="id-hk-description" cols="30" rows="10" class="form-control"></textarea>
+        </div>
+        <button class="float-right btn btn-link" > Next &raquo; </button>
       </div>
-      <div class="form-group">
-        <label for="id-hk-name">Name</label>
-        <input type="text" [(ngModel)]="hackathon.name" name="name" class="form-control" id="id-hk-name" aria-describedby="hackathon_name" >
-      </div>
-      <div class="form-group">
-        <label for="id-hk-summary">Summary</label>
-        <input type="text" [(ngModel)]="hackathon.summary" name="summary" class="form-control" id="id-hk-summary" aria-describedby="hackathon_summary" >
-      </div>
-      <div class="form-group">
-        <label for="id-hk-description">Description</label>
-        <textarea name="description" [(ngModel)]="hackathon.description" id="id-hk-description" cols="30" rows="10" class="form-control"></textarea>
-      </div>
-      <button class="float-right btn btn-link" > Next &raquo; </button>
+
     </form>
 
   </div>

@@ -1,6 +1,7 @@
 import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Hackathon} from '../../../../model/hackathon.model';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-hackathon-create',
@@ -10,13 +11,33 @@ import {Hackathon} from '../../../../model/hackathon.model';
 export class HackathonCreateComponent implements OnInit, OnChanges {
 
   currentTab = 'basic-info';
-  hackathon: Hackathon = new Hackathon();
 
-  hackathonJson = '';
+
+  hackathonForm: FormGroup;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.hackathonForm = new FormGroup({
+      basicInfo: new FormGroup({
+        banner: new FormControl('', [Validators.required]),
+        name: new FormControl('default name'),
+        summary: new FormControl('default summary'),
+        description: new FormControl('default description')
+      }),
+      criteria: new FormGroup({
+        eligibility: new FormControl('default eligibility'),
+        requirements: new FormControl('default requirements'),
+        judges: new FormControl('default judges'),
+        judgingCriteria: new FormControl('default judges criteria')
+      })
+    });
+
+    this.hackathonForm.valueChanges.subscribe(
+      changes => {
+        console.log(changes);
+      }
+    );
   }
 
   select(tabName: string, event: Event) {
@@ -29,7 +50,8 @@ export class HackathonCreateComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.hackathon.banner + ' test');
-    this.hackathonJson = JSON.stringify(this.hackathon);
+    console.log('changes happened...');
   }
+
+
 }

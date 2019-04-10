@@ -1,27 +1,30 @@
 <section>
   <div class="row container-fluid" id="create-basic-info-wrapper">
-    <form class="col-lg-6">
-      <div class="form-group">
-        <label for="id-hk-requirements">Requirements</label>
-        <textarea name="requirements" [(ngModel)]="hackathon.requirements" id="id-hk-requirements" cols="30" rows="4" class="form-control"></textarea>
+    <form class="col-lg-6" [formGroup]="hackathonForm">
+      <div formGroupName="criteria">
+        <div class="form-group">
+          <label for="id-hk-requirements">Requirements</label>
+          <textarea name="requirements" formControlName="requirements" id="id-hk-requirements" cols="30" rows="4" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="id-hk-eligibility">Eligibility</label>
+          <textarea name="eligibility" formControlName="eligibility" id="id-hk-eligibility" cols="30" rows="4" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="id-hk-judges">Judges</label>
+          <textarea  name="judges" formControlName="judges" id="id-hk-judges" cols="30" rows="4" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="id-hk-judgingCriteria">Judging Criteria</label>
+          <textarea name="judgingCriteria" formControlName="judgingCriteria" id="id-hk-judgingCriteria" cols="30" rows="4" class="form-control"></textarea>
+        </div>
+
+        <button class="float-right btn btn-link"> Next &raquo; </button>
       </div>
 
-      <div class="form-group">
-        <label for="id-hk-eligibility">Eligibility</label>
-        <textarea name="eligibility" [(ngModel)]="hackathon.eligibility" id="id-hk-eligibility" cols="30" rows="4" class="form-control"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="id-hk-judges">Judges</label>
-        <textarea  name="judges" [(ngModel)]="hackathon.judges" id="id-hk-judges" cols="30" rows="4" class="form-control"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="id-hk-judgingCriteria">Judging Criteria</label>
-        <textarea name="judgingCriteria" [(ngModel)]="hackathon.judgingCriteria" id="id-hk-judgingCriteria" cols="30" rows="4" class="form-control"></textarea>
-      </div>
-
-      <button class="float-right btn btn-link"> Next &raquo; </button>
     </form>
   </div>
 </section>

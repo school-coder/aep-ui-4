@@ -1,32 +1,36 @@
 
 <section>
   <app-titlebar title="Create Hackathon">
-    <button class="btn btn-primary"> Create</button> &nbsp;
+    <button class="btn btn-primary" [disabled]="!hackathonForm.valid"> Create</button> &nbsp;
     <button class="btn btn-outline-primary" (click)="navigateToList()">Cancel</button>
   </app-titlebar>
   <div class="row container-fluid">
     <div class="col-lg-2">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link" href (click)="select('basic-info', $event)"> Basic information </a>
+          <a [ngClass]="{red: !hackathonForm.get('basicInfo').valid && hackathonForm.get('basicInfo').touched}" class="nav-link" href (click)="select('basic-info', $event)"> Basic information </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href (click)="select('criteria', $event)"> Criteria </a>
+          <a class="nav-link"  href (click)="select('criteria', $event)"> Criteria </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href (click)="select('scheduled-dates', $event)"> Sceduled Dates </a>
         </li>
       </ul>
 
-      {{ hackathon | json }}
+      {{ hackathonForm }}
     </div>
 
     <div class="col-lg-10">
-      <app-basic-info *ngIf="currentTab === 'basic-info'" [hackathon]="hackathon"></app-basic-info>
 
-      <app-criteria *ngIf="currentTab === 'criteria'" [hackathon]="hackathon"></app-criteria>
+      <form [formGroup]="hackathonForm">
+        <app-basic-info *ngIf="currentTab === 'basic-info'" [hackathonForm]="hackathonForm"></app-basic-info>
 
-      <app-planned-dates *ngIf="currentTab === 'scheduled-dates'" ></app-planned-dates>
+        <app-criteria *ngIf="currentTab === 'criteria'" [hackathonForm]="hackathonForm"></app-criteria>
+
+        <app-planned-dates *ngIf="currentTab === 'scheduled-dates'" ></app-planned-dates>
+      </form>
+
     </div>
   </div>
 </section>

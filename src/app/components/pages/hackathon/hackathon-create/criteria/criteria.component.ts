@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Hackathon} from '../../../../../model/hackathon.model';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-criteria',
@@ -8,7 +8,7 @@ import {Hackathon} from '../../../../../model/hackathon.model';
 })
 export class CriteriaComponent implements OnInit {
 
-  @Input() hackathon: Hackathon;
+  @Input() hackathonForm: FormGroup;
 
   constructor() { }
 

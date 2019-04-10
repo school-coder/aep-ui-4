@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Hackathon} from '../../../../../model/hackathon.model';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-basic-info',
@@ -8,7 +9,7 @@ import {Hackathon} from '../../../../../model/hackathon.model';
 })
 export class BasicInfoComponent implements OnInit {
 
-  @Input() hackathon: Hackathon;
+  @Input() hackathonForm: FormGroup;
 
   constructor() { }
 
