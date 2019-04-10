@@ -7,23 +7,23 @@
     <div class="col-lg-2">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link" href > Basic information </a>
+          <a class="nav-link" href (click)="select('basic-info', $event)"> Basic information </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href > Criteria </a>
+          <a class="nav-link" href (click)="select('criteria', $event)"> Criteria </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href > Sceduled Dates </a>
+          <a class="nav-link" href (click)="select('scheduled-dates', $event)"> Sceduled Dates </a>
         </li>
       </ul>
     </div>
 
     <div class="col-lg-10">
-      <app-basic-info></app-basic-info>
+      <app-basic-info *ngIf="currentTab === 'basic-info'"></app-basic-info>
 
-      <app-criteria></app-criteria>
+      <app-criteria *ngIf="currentTab === 'criteria'"></app-criteria>
 
-      <app-planned-dates></app-planned-dates>
+      <app-planned-dates *ngIf="currentTab === 'scheduled-dates'" ></app-planned-dates>
     </div>
   </div>
 </section>

@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HackathonCreateComponent implements OnInit {
 
+  currentTab = 'basic-info';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  select(tabName: string, event: Event) {
+    event.preventDefault();
+    this.currentTab = tabName;
   }
 
 }
