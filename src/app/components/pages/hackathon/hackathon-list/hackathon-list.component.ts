@@ -32,6 +32,6 @@ export class HackathonListComponent implements OnInit {
   }
 
   navigateToCreate() {
-    this.router.navigate(['create'], {relativeTo: this.route})
+    this.router.navigate(['create'], {relativeTo: this.route});
   }
 }
