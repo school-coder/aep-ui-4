@@ -3,14 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { HackathonComponent } from './pages/hackathon/hackathon.component';
-import { HeaderComponent } from './core/header/header.component';
-import { FooterComponent } from './core/footer/footer.component';
-import { HomeComponent } from './pages/home/home.component';
-import { BetaprogramsComponent } from './pages/betaprograms/betaprograms.component';
-import { TitlebarComponent } from './widgets/titlebar/titlebar.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { RegisterComponent } from './components/pages/register/register.component';
+import { HackathonComponent } from './components/pages/hackathon/hackathon.component';
+import { HeaderComponent } from './components/core/header/header.component';
+import { FooterComponent } from './components/core/footer/footer.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { BetaprogramsComponent } from './components/pages/betaprograms/betaprograms.component';
+import { TitlebarComponent } from './components/widgets/titlebar/titlebar.component';
+import { LoginService } from './services/login/login.service';
+import { HttpClientModule } from '@angular/common/http';
+import { HackathonListComponent } from './components/pages/hackathon/hackathon-list/hackathon-list.component';
+import { HackathonCreateComponent } from './components/pages/hackathon/hackathon-create/hackathon-create.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +26,16 @@ import { TitlebarComponent } from './widgets/titlebar/titlebar.component';
     FooterComponent,
     HomeComponent,
     BetaprogramsComponent,
-    TitlebarComponent
+    TitlebarComponent,
+    HackathonListComponent,
+    HackathonCreateComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ LoginService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

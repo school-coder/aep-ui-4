@@ -1,5 +1,7 @@
 <section>
-
+  <app-titlebar title="Hackathon Gallery">
+    <button class="btn btn-primary" (click)="navigateToCreate()">Create</button>
+  </app-titlebar>
   <div class="container-fluid" id="id-hackathon-list-container">
     <div class="row" *ngFor="let hackathon of hackathons" >
       <div class="col-md-1">
