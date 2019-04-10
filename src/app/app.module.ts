@@ -15,6 +15,9 @@ import { LoginService } from './services/login/login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HackathonListComponent } from './components/pages/hackathon/hackathon-list/hackathon-list.component';
 import { HackathonCreateComponent } from './components/pages/hackathon/hackathon-create/hackathon-create.component';
+import { BasicInfoComponent } from './components/pages/hackathon/hackathon-create/basic-info/basic-info.component';
+import { CriteriaComponent } from './components/pages/hackathon/hackathon-create/criteria/criteria.component';
+import { PlannedDatesComponent } from './components/pages/hackathon/hackathon-create/planned-dates/planned-dates.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { HackathonCreateComponent } from './components/pages/hackathon/hackathon
     BetaprogramsComponent,
     TitlebarComponent,
     HackathonListComponent,
-    HackathonCreateComponent
+    HackathonCreateComponent,
+    BasicInfoComponent,
+    CriteriaComponent,
+    PlannedDatesComponent
   ],
   imports: [
     BrowserModule,
