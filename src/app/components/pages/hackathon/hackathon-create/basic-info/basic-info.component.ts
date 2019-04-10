@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Hackathon} from '../../../../../model/hackathon.model';
 
 @Component({
   selector: 'app-basic-info',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./basic-info.component.scss']
 })
 export class BasicInfoComponent implements OnInit {
+
+  @Input() hackathon: Hackathon;
 
   constructor() { }
 

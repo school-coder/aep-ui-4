@@ -1,20 +1,35 @@
 <section>
   <h2>Login</h2>
-  <form>
+  <form [formGroup]="loginForm">
+
     <div class="form-group">
+
       <label for="id-lg-email">Email address</label>
-      <input type="text" class="form-control" id="id-lg-email" aria-describedby="emailHelp"
-             placeholder="Enter email">
+      <input type="text"
+             formControlName="username"
+             name="username"
+             class="form-control"
+             id="id-lg-email"
+             aria-describedby="emailHelp"
+             placeholder="Enter email"
+      >
+
+      <span *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched">
+        <span *ngIf="loginForm.get('username').errors['required']"> This field is required!! </span>
+        <span *ngIf="loginForm.get('username').errors['email']">Invalid email</span>
+      </span>
+
     </div>
+
     <div class="form-group">
       <label for="id-lg-password">Password</label>
-      <input type="password" class="form-control" id="id-lg-password" placeholder="Password">
+      <input type="password" formControlName="password" name="password" class="form-control" id="id-lg-password" placeholder="Password">
     </div>
 
     <div class="form-group">
       <a href="#">Forgot Password</a>
     </div>
 
-    <button type="submit" id="id-login-submit" class="btn btn-primary" (click)="login($event)">Submit</button>
+    <button [disabled]="!loginForm.valid" type="submit" id="id-login-submit" class="btn btn-primary" (click)="login($event)">Submit</button>
   </form>
 </section>

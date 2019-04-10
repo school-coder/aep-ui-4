@@ -17,6 +17,7 @@ import { HackathonCreateComponent } from './components/pages/hackathon/hackathon
 import { BasicInfoComponent } from './components/pages/hackathon/hackathon-create/basic-info/basic-info.component';
 import { CriteriaComponent } from './components/pages/hackathon/hackathon-create/criteria/criteria.component';
 import { PlannedDatesComponent } from './components/pages/hackathon/hackathon-create/planned-dates/planned-dates.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ import { PlannedDatesComponent } from './components/pages/hackathon/hackathon-cr
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [ LoginService ],
   bootstrap: [AppComponent]

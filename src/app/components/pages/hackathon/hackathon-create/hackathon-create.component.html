@@ -17,12 +17,14 @@
           <a class="nav-link" href (click)="select('scheduled-dates', $event)"> Sceduled Dates </a>
         </li>
       </ul>
+
+      {{ hackathon | json }}
     </div>
 
     <div class="col-lg-10">
-      <app-basic-info *ngIf="currentTab === 'basic-info'"></app-basic-info>
+      <app-basic-info *ngIf="currentTab === 'basic-info'" [hackathon]="hackathon"></app-basic-info>
 
-      <app-criteria *ngIf="currentTab === 'criteria'"></app-criteria>
+      <app-criteria *ngIf="currentTab === 'criteria'" [hackathon]="hackathon"></app-criteria>
 
       <app-planned-dates *ngIf="currentTab === 'scheduled-dates'" ></app-planned-dates>
     </div>
