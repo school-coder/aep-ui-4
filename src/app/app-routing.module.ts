@@ -11,6 +11,10 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'hackathons',
+    loadChildren: './hackathon/hackathon.module#HackathonModule'
+  },
+  {
     path: 'betaprograms',
     component: BetaprogramsComponent
   },

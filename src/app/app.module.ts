@@ -11,7 +11,6 @@ import {BetaprogramsComponent} from './components/pages/betaprograms/betaprogram
 import {LoginService} from './services/login/login.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HackathonModule} from './hackathon/hackathon.module';
 
 @NgModule({
   declarations: [
@@ -28,8 +27,7 @@ import {HackathonModule} from './hackathon/hackathon.module';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule,
-    HackathonModule
+    FormsModule
   ],
   providers: [ LoginService ],
   bootstrap: [AppComponent]
