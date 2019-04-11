@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from '../../../services/login/login.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Store} from '@ngrx/store';
+import * as LoginActions from 'src/app/store/login/login.actions';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private store: Store<{auth: {logged_user: string}}>) { }
 
   loginForm: FormGroup;
 
@@ -18,13 +20,16 @@ export class LoginComponent implements OnInit {
       username: new FormControl('Nagarajan', [Validators.required, Validators.email]),
       password: new FormControl('Test')
     });
+
   }
 
   login($event) {
 
     $event.preventDefault();
 
-    this.loginService.login(this.loginForm.value)
+    this.store.dispatch(new LoginActions.Login(this.loginForm.get(['username']).value));
+
+  /* this.loginService.login(this.loginForm.value)
       .subscribe(
         (response) => {
           console.log(response);
@@ -36,6 +41,6 @@ export class LoginComponent implements OnInit {
         () => {
           console.log('request completed');
         }
-      );
+      );*/
   }
 }

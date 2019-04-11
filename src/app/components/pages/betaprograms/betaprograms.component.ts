@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Store} from '@ngrx/store';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-betaprograms',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BetaprogramsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<{auth: {logged_user: string}}>) { }
+
+  private loggedUser: Observable<any>;
 
   ngOnInit() {
+    this.loggedUser = this.store.select('auth');
   }
 
 }

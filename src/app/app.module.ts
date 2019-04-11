@@ -11,6 +11,8 @@ import {BetaprogramsComponent} from './components/pages/betaprograms/betaprogram
 import {LoginService} from './services/login/login.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {StoreModule} from '@ngrx/store';
+import {AuthenticationReducer} from './store/login/auth.reducer';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot({auth: AuthenticationReducer})
   ],
   providers: [ LoginService ],
   bootstrap: [AppComponent]

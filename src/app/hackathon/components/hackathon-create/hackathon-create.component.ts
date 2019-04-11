@@ -1,6 +1,5 @@
 import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Hackathon} from '../../model/hackathon.model';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
